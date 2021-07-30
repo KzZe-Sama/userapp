@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import UserView,PhoneSerializer,AddressSerializer
+from rest_framework.decorators import api_view
 from .models import User,Address,Phone
 # Create your views here.
-
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.object.all()
