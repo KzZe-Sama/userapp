@@ -76,7 +76,7 @@ class User(AbstractBaseUser):
 
 
 class Address(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,null=True,related_name='User')
     address_location = models.CharField(max_length=255)
     is_default = models.BooleanField()
 
@@ -85,7 +85,7 @@ class Address(models.Model):
 
 
 class Phone(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,null=True,related_name='User')
     phone_number = models.IntegerField()
     is_default = models.BooleanField()
 
